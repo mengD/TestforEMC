@@ -2,33 +2,50 @@ Question 2
 ====
 
 ***
-# Title: Create a or multiple LUNs on Storage
-* Approximate Test Case Execution Time: 30 mins
+# Title: Create one or multiple LUNs on Storage
+* Approximate Test Case Execution
 * Author: Meng
 * Related Bugs:
 * Test Objective: Verify creating a LUN or multiple LUNs on Storage
 * Setup: BUI and CLI 
 * Storage Platform: Linux
 * Special Configuration:
-    1. Create 10 LUNs concurrently  
-    2. Create 100 LUNs concurrently 
-    3. Create 1000 LUNs concurrently
-    4. In the same pool
-    5. Cross different pools 
-    6. On a single head of the storage
-    7. On both heads of the storage
-* Expected Results: Successfully created LUNs on storage (No errors or exceptions)
+    * Create 1 LUN
+        1. size: 1KB
+        2. size: 999KB
+        3. size: 10MB
+        4. size: 1GB
+        5. size: 1000GB
+        6. size: 3TB
+    * Create 10 LUNs, 100 LUNs, 1000 LUNs
+        1. concurrently in one pool
+        2. sequentially in one pool
+        3. concurrently in multiple pools
+    * Create 10 LUNs, 100 LUNs, 1000 LUNs
+        1. On a single head of the storage
+        2. On both heads of the storage
+* Expected Results:
+    1. Successfully created LUNs on storage (No errors or exceptions)
+    2. Finished in acceptable time
 
 ***
 # Title: Resize LUN Storage
-* Approximate Test Case Execution Time: 10mins
+* Approximate Test Case Execution
 * Author: Meng
 * Related Bugs:
 * Test Objective: Verify resizing a LUN  on Storage
 * Setup: BUI and CLI 
 * Storage Platform:
 * Special Configuration:
-* Expected Results: Successfully expanded LUNs on storage (No errors or exceptions)
+    * Resize a LUN from 100GB to 3TB
+    * Resize a LUN from 100GB to 399GB
+    * Resize a LUN from 100GB to 10MB
+    * Resize a LUN from 3TB to 10KB
+    * Resize a LUN from 5TB to 299GB
+    * Resize 100 LUNs concurrently from 100GB to 10MB
+* Expected Results:
+    1. Successfully expanded LUNs on storage (No errors or exceptions)
+    2. Finished in acceptable time
 
 ***
 # Title: Export a LUN to a host
@@ -39,10 +56,12 @@ Question 2
 * Setup: BUI and CLI 
 * Storage Platform:
 * Special Configuration:
-    1. Export to different OSs (Linux Solaris and Windows for supported version)
-    2. Exported 100 LUNs concurrently
-    3. Exported 1000 LUNs concurrently
-* Expected Results: Successfully exported LUNs to a host (No errors or exceptions)
+    * Export to different OSs (Linux Solaris and Windows for supported version)
+    * Exported 100 LUNs concurrently
+    * Exported 1000 LUNs concurrently
+* Expected Results:
+    1. Successfully exported LUNs to a host (No errors or exceptions)
+    2. Finished in acceptable time
 
 ***
 # Title: Un-export a LUN to a host
@@ -53,8 +72,12 @@ Question 2
 * Setup: BUI and CLI 
 * Storage Platform:
 * Special Configuration:
-    1. un-export to different OSs (Linux Solaris and Windows for supported version)
-* Expected Results: Successfully un-exported LUNs to a host (No errors or exceptions)
+    * un-export to different OSs (Linux Solaris and Windows for supported version)
+    * un-export 100 LUNs concurrently
+    * un-export 1000 LUNs concurrently
+* Expected Results:
+    1. Successfully un-exported LUNs to a host (No errors or exceptions)
+    2. Finished in acceptable time
 
 
 *** 
@@ -66,8 +89,12 @@ Question 2
 * Setup: BUI and CLI 
 * Storage Platform:
 * Special Configuration:
-    1. removing an un-export on different OSs (Linux Solaris and Windows for supported version)
-* Expected Results: Successfully removing an un-exported LUNs on a host (No errors or exceptions)
+    * Remove an un-export on different OSs (Linux Solaris and Windows for supported version)
+    * Remove 100 LUNs concurrently
+    * Remove 1000 LUNs concurrently
+* Expected Results:
+    1. Successfully removing an un-exported LUNs on a host (No errors or exceptions)
+    2. Finished in acceptable time
 
 ***
 # Title: Retrieve the info of a LUN
@@ -78,24 +105,36 @@ Question 2
 * Setup: BUI and CLI 
 * Storage Platform:
 * Special Configuration:
-    1. size
-    2. export
-    3. initiator/target
-    4. Quota/Reservation
+    * Retrieve the LUN info:
+        * Size
+        * Used Size or Available Size
+        * Online or Offline
+        * Block Size(Logical/Physical)
+        * Exported or Un-exported
+        * Initiator or Target
+        * Mountpoint
+        * GUID
+        * Quota
+        * Reservation
 * Expected Results: Retrieving the info correctly
 
 ***
 # Title: Performance Test 
 * Approximate Test Case Execution Time: 30 mins
-* Author:Meng
+* Author: Meng
 * Related Bugs:
 * Test Objective: Verify Performance is not impacted during the testing
 * Setup: BUI and CLI 
 * Storage Platform:
 * Special Configuration:
+    * One LUN, io size: 4KB, Read: 100%, Write: 0%, Random or Sequential
+    * One LUN, io size: 4KB, Read: 0%, Write: 100%, Random or Sequential
+    * One LUN, io size: 128KB, Read: 100%, Write: 0%, Random or Sequential
+    * One LUN, io size: 128KB, Read: 0%, Write: 100%, Random or Sequential
+    * One LUN, io size: 32MB, Read: 50%, Write: 50%, Random or Sequential
+    * One LUN, io size: 32MB, Read: 50%, Write: 50%, Random or Sequential
 
-    Create 100 LUNs and 1000 LUNs and check the following performance measurement
+* Expected Results:
     1. IOPs
     2. IO Latency 
-
-* Expected Results: IOPs and IO Latency 
+    3. Any Errors
