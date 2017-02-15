@@ -1,27 +1,24 @@
-Title: Create a or multiple LUNs on Storage
+Question 2
+====
 
-Approximate Test Case Execution Time: 30 mins
+# Title: Create a or multiple LUNs on Storage
 
-Author:Meng
-
-Related Bugs:
-
-Test Objective: Verify creating a LUN or multiple LUNs on Storage
-
-Setup: BUI and CLI 
-
-Storage Platform:
-
-Special Configuration:
-    1.Create 10 LUNs concurrently  
-    2.Create 100 LUNs concurrently 
-    3.Create 1000 LUNs concurrently
+* Approximate Test Case Execution Time: 30 mins
+* Author:Meng
+* Related Bugs:
+* Test Objective: Verify creating a LUN or multiple LUNs on Storage
+* Setup: BUI and CLI 
+* Storage Platform: Linux
+* Special Configuration:
+    1. Create 10 LUNs concurrently  
+    2. Create 100 LUNs concurrently 
+    3. Create 1000 LUNs concurrently
     4. In the same pool
     5. Cross different pools 
     6. On a single head of the storage
     7. On both heads of the storage
 
-Expected Results: Successfully created LUNs on storage (No errors or exceptions)
+* Expected Results: Successfully created LUNs on storage (No errors or exceptions)
 
 
 
