@@ -128,6 +128,6 @@ Question 2
 * Storage Platform:
 * Special Configuration
 * Expected Results:
-    1. 
-    2. 
+    1. IOPs
+    2. IO Latency
     3. No Errors
