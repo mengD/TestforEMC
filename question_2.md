@@ -89,11 +89,11 @@ Question 2
 * Setup: BUI and CLI 
 * Storage Platform:
 * Special Configuration:
-    * Remove an un-export on different OSs (Linux Solaris and Windows for supported version)
+    * Remove an un-export from Storage 
     * Remove 100 LUNs concurrently
     * Remove 1000 LUNs concurrently
 * Expected Results:
-    1. Successfully removing an un-exported LUNs on a host (No errors or exceptions)
+    1. Successfully removing an un-exported 
     2. Finished in acceptable time
 
 ***
@@ -126,15 +126,8 @@ Question 2
 * Test Objective: Verify Performance is not impacted during the testing
 * Setup: BUI and CLI 
 * Storage Platform:
-* Special Configuration:
-    * One LUN, io size: 4KB, Read: 100%, Write: 0%, Random or Sequential
-    * One LUN, io size: 4KB, Read: 0%, Write: 100%, Random or Sequential
-    * One LUN, io size: 128KB, Read: 100%, Write: 0%, Random or Sequential
-    * One LUN, io size: 128KB, Read: 0%, Write: 100%, Random or Sequential
-    * One LUN, io size: 32MB, Read: 50%, Write: 50%, Random or Sequential
-    * One LUN, io size: 32MB, Read: 50%, Write: 50%, Random or Sequential
-
+* Special Configuration
 * Expected Results:
-    1. IOPs
-    2. IO Latency 
-    3. Any Errors
+    1. 
+    2. 
+    3. No Errors
