@@ -44,13 +44,12 @@ def reverse_list_k(l, k):
     is_set_head = False
     sublist = []
     while l:
-        print(l.value)
         if len(sublist) < k:
             sublist.append(l)
             l = l.ptr
         elif len(sublist) == k:
             sub_head, sub_tail = reverse_list(sublist)
-            print('h - %d, t - %d' % (sub_head.value, sub_tail.value))
+            #print('h - %d, t - %d' % (sub_head.value, sub_tail.value))
 
             if not is_set_head:
                 final_head = sub_head
@@ -63,7 +62,7 @@ def reverse_list_k(l, k):
                 cur_head = sub_tail
                 cur_head.ptr = None
                 sublist = []
-                print_list(final_head)
+                #print_list(final_head)
                 continue
             
     if len(sublist) < k:
